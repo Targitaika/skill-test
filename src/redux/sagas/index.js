@@ -1,6 +1,6 @@
 import { takeEvery, put } from 'redux-saga/effects';
 
-const mapPonints = [{
+const mapPoints = [{
   name: 'Москва',
   x: 55.75,
   y: 37.6,
@@ -30,15 +30,15 @@ export function* workerSaga(x) {
   const { from, to } = x;
   let objectFrom;
   let objectTo;
-  for (let i = 0; i < mapPonints.length; i++) {
-    if (from === mapPonints[i].name) {
-      objectFrom = mapPonints[i];
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < mapPoints.length; i++) {
+    if (from === mapPoints[i].name) {
+      objectFrom = mapPoints[i];
     }
-    if (to === mapPonints[i].name) {
-      objectTo = mapPonints[i];
+    if (to === mapPoints[i].name) {
+      objectTo = mapPoints[i];
     }
   }
-  console.log('dada', objectFrom, objectTo);
   yield put({ type: 'TABLE_SET', from: objectFrom, to: objectTo });
 }
 export function* watchClickSaga() {
