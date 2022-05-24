@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  position: relative;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +37,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.dragging{
+  width: 6px;
+  top: 0;
+  left: calc(50% - 3px);
+  height: 100%;
+  background: #42c3ff;
+  position: absolute;
+  z-index: 5000;
 }
